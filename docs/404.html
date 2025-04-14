@@ -1,20 +1,14 @@
-<!DOCTYPE html><html><head>  <meta charset="utf-8">  <title>PingPal</title>  <script>    // Store the segment of the URL path that comes after the '/pingpal/' prefix    const pathSegmentsToKeep = 0;        // Get the current URL path    let l = window.location;        // Extract the path and remove the base path    let path = l.pathname.split('/').slice(1 + pathSegmentsToKeep).join('/');
-    
-    // Extract the rest of the URL parameters
-    let query = l.search || '';
-    let hash = l.hash || '';
-    
-    // Build the redirect URL
-    let base = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/pingpal';
-    
-    // Save the current page so we can redirect to it after loading index.html
-    sessionStorage.setItem('redirect', path + query + hash);
-    
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PingPal</title>
+  <script>
     // Redirect to the base URL
-    l.replace(base);
+    window.location.href = '/pingpal/';
   </script>
 </head>
 <body>
-  <h1>Redirecting...</h1>
+  <p>Page not found. Redirecting to home...</p>
 </body>
 </html>
